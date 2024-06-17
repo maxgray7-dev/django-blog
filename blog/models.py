@@ -26,6 +26,11 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     # As you can see, this uses a constant STATUS. Create this constant above the class as a tuple. (row 6)
     excerpt = models.TextField(blank=True)
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"The title of this post is {self.title}"
 
 
 class Comment(models.Model):
