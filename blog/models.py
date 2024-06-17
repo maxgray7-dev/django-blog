@@ -25,6 +25,7 @@ class Post(models.Model):
     # In the Post model, add an attribute status defined as an integer field with a default of 0.
     status = models.IntegerField(choices=STATUS, default=0)
     # As you can see, this uses a constant STATUS. Create this constant above the class as a tuple. (row 6)
+    excerpt = models.TextField(blank=True)
 
 
 class Comment(models.Model):
