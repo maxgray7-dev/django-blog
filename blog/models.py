@@ -26,6 +26,7 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     # As you can see, this uses a constant STATUS. Create this constant above the class as a tuple. (row 6)
     excerpt = models.TextField(blank=True)
+    updated_on = models.DateTimeField(auto_now=True)
     
     # this helps to order data from newest to oldest.
     class Meta:
@@ -50,6 +51,8 @@ class Comment(models.Model):
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
+
+    # challenge = models.FloatField('default=3.0')
 
     class Meta:
         ordering = ["created_on"]
