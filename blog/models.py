@@ -18,7 +18,7 @@ class Post(models.Model):
     )
     # Note: This is the blog article content.
     # Note: The auto_now_add=True means the default created time is the time of post entry.
-    content = models.DateTimeField()
+    content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     
     # 
