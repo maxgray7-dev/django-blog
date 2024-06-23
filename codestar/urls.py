@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from . import views
+
 # from blog.views import my_blog
 # from blog import views as blog_views ( this no need anymore because our blog will have own URL file)
 
