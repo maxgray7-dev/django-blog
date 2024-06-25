@@ -33,6 +33,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '8000-maxgray7dev-djangoblog-g7qig9tsspa.ws.codeinstitute-ide.net',
     '.herokuapp.com'
+
 ]
 
 

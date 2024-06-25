@@ -19,8 +19,7 @@
                                 <img class="card-img-top" src="{% static 'images/default.jpg' %}"
                                     alt="placeholder image">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}"
-                                    alt="{{ post.title }}">
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>
@@ -28,7 +27,7 @@
                             </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt}}></p>
+                                <p class="card-text">{{ post.excerpt }}</p>
                             </a>
 
                             <hr />
@@ -37,7 +36,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- This says only 3 blogs in a row, then moves to next row-->
                 {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
@@ -51,9 +49,7 @@
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
-            <li>
-                <a href = "?page={{ page_obj.previous_page_number}}" class="page-link">&laquo; PREV</a>
-            </li>
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
             {% endif %}
             {% if page_obj.has_next %}
             <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
@@ -65,7 +61,4 @@
 
 <!-- index.html content ends here -->
 {% endblock %}
-
-{% block copyright %}
-    Updated by Max 2024
-{% endblock %}
+{% block copyright %}Copyright 2023 Matt Rudge{% endblock %}
