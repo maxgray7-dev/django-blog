@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 
 # Create your models here.
@@ -17,6 +18,8 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
+    featured_image = CloudinaryField('image', default='placeholder')
+
     # Note: This is the blog article content.
     # Note: The auto_now_add=True means the default created time is the time of post entry.
     content = models.TextField()
